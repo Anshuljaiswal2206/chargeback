@@ -1,0 +1,50 @@
+﻿@model ChargeBackCalculation.Models.CustomerRegister
+@{
+    ViewBag.Title = "CustomerLogin";
+}
+
+<h2>Welcome Customer</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input  type="submit" value="Login" class="btn btn-primary" />
+                
+                <h5>@ViewBag.LoginMessage</h5>
+                <p><span style="color:red">@ViewBag.ErrorMessage</span></p>
+            </div>
+        </div>
+    </div>
+}
+<div class="form-group">
+    @Html.ActionLink("Forgot UserId?", "RecoveryUserId", "CustomerRegisters") or @Html.ActionLink("Password?", "PasswordReset", "CustomerRegisters")
+</div>
+<div>
+    <p>New User?</p>
+    @Html.ActionLink("Register", "CustomerRegister")
+</div>
+
+
+
+

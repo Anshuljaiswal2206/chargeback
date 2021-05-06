@@ -1,0 +1,64 @@
+﻿@model ChargeBackCalculation.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankAccountNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankAccountNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankBranchName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankBranchName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AvailableBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableBalance)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

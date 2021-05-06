@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index1";
+}
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("ChargeBack Calculator", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Logout", "Index", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li class="nav-item">
+            @Html.ActionLink("Lodge Complaint", "Create", "ComplaintRegisters", null, new { @class = "nav-link" })
+        </li>
+    </ul>
+</div>
+<h4>Bank Branch: KPMG</h4>
+<h4>Bank Address: Indore</h4>
+<h4>Account Balance: 2000</h4>
